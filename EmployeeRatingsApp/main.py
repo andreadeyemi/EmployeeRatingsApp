@@ -16,8 +16,11 @@ FILE_NAME: str = 'EmployeeRatings.json'
 def main():
     employees: list = []  # a table of employee data
 
-    # Load existing employee data from file
-    employees = FileProcessor.read_employee_data_from_file(FILE_NAME, employees, Employee)
+    # Try to load existing employee data from file
+    try:
+        employees = FileProcessor.read_employee_data_from_file(FILE_NAME, employees, Employee)
+    except Exception as e:
+        print(f"An error occurred while loading data: {e}")
 
     while True:
         IO.output_menu(IO.MENU)  # Display the menu
@@ -27,7 +30,12 @@ def main():
             IO.output_employee_data(employees)
 
         elif menu_choice == '2':  # Enter new employee rating data
-            employees = IO.input_employee_data(employees, Employee)
+            employee_data = IO.input_employee_data()
+            employee = Employee(first_name=employee_data['first_name'],
+                                last_name=employee_data['last_name'],
+                                review_date=employee_data['review_date'],
+                                review_rating=employee_data['review_rating'])
+            employees.append(employee)  # Add the new employee to the list
             IO.output_employee_data(employees)  # Display updated data
 
         elif menu_choice == '3':  # Save data to a file

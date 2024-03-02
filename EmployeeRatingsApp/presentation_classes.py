@@ -13,6 +13,17 @@ class IO:
     Andre Adeyemi, 3.1.2024, Created the class.
     """
 
+    # Define the MENU class attribute
+    MENU: str = '''
+    ---- Employee Ratings ------------------------------
+      Select from the following menu:
+        1. Show current employee rating data.
+        2. Enter new employee rating data.
+        3. Save data to a file.
+        4. Exit the program.
+    --------------------------------------------------
+    '''
+
     @staticmethod
     def output_error_messages(message: str, error: Exception = None):
         """
@@ -48,22 +59,28 @@ class IO:
     @staticmethod
     def output_employee_data(employee_data: list):
         """
-        Displays employee data to the user.
+        Displays employee data to the user, including ratings with emoji stars.
 
         :param employee_data: list - The list of employee objects to display.
         :return: None
         """
         print("\nCurrent Employee Ratings:")
         for employee in employee_data:
-            print(f"Name: {employee.first_name} {employee.last_name}, Review Date: {employee.review_date}, Rating: {employee.review_rating}")
+            # Convert numeric rating to emoji stars
+            stars = '⭐️' * employee.review_rating
+            print(f"Name: {employee.first_name} {employee.last_name}, Review Date: {employee.review_date}, Rating: {employee.review_rating} {stars}")
         print("-" * 60)
 
     @staticmethod
-    def input_employee_data(employee_type):
+    def input_employee_data():
         """
         Gets employee data from the user and creates an employee object.
 
-        :param employee_type: type - The Employee class or a subclass thereof.
-        :return: Employee - The created employee object.
+        :return: dict - The created employee data.
         """
-        first_name = input
+        first_name = input("What is the employee's first name? ").strip()
+        last_name = input("What is the employee's last name? ").strip()
+        review_date = input("What is their review date (YYYY-MM-DD)? ").strip()
+        review_rating = int(input("What is their review rating (1-5)? ").strip())
+        return {"first_name": first_name, "last_name": last_name, "review_date": review_date, "review_rating": review_rating}
+
