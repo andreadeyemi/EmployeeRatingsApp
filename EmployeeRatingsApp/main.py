@@ -2,7 +2,7 @@
 # Title: Assignment08 - Main Script
 # Description: Main script for running the Employee Ratings application.
 # ChangeLog: (Who, When, What)
-# Andre M Adeyemi, 3.1.2024, Created Script
+# Andre  Adeyemi, 3.1.2024, Created Script
 # ------------------------------------------------------------------------------------------------- #
 
 from data_classes import Employee
