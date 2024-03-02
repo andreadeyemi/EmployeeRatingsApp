@@ -2,7 +2,7 @@
 
 Welcome to the Employee Ratings App! This Python-based application is meticulously designed to streamline the management of employee performance ratings, catering to the discerning needs of managers and HR professionals. By providing seamless functionality and intuitive interfaces, our application ensures efficient input, clear visualization, and effective management of performance metrics. 
 
-This application serves as the final assignment for IT FDN 110 B Wi 24: Foundations Of Programming: Python.<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Washington_Huskies_logo.svg/1920px-Washington_Huskies_logo.svg.png" alt="Washington Huskies Logo" width="48"> 
+This application serves as the final assignment for IT FDN 110 B Wi 24: Foundations Of Programming: Python.<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Washington_Huskies_logo.svg/1920px-Washington_Huskies_logo.svg.png" alt="Washington Huskies Logo" width="30"> 
 
 ## Features 📋
 
